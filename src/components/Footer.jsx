@@ -1,7 +1,7 @@
 const Footer = () => {
     return (
         <>
-            <footer className="grid">
+            <footer className="mobile-grid medium-grid large-grid">
                 
             </footer>
         </>

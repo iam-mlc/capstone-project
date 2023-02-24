@@ -1,7 +1,7 @@
 const Main = () => {
     return (
         <>
-            <main className="grid">
+            <main className="mobile-grid medium-grid large-grid">
                 
             </main>
         </>
