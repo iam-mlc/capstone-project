@@ -1,42 +1,82 @@
+const List = ({data}) =>{
 
-const links = [
-    {
-        name: "Home",
-        url: nameToURL(this.name)
-    },
-    {
-        name: "About",
-        url: nameToURL(this.name)
-    },
-    {
-        name: "Menu",
-        url: nameToURL(this.name)
-    },
-    {
-        name: "Reservations",
-        url: nameToURL(this.name)
-    },
-    {
-        name: "Order online",
-        url: nameToURL(this.name)
-    },
-    {
-        name: "Login",
-        url: nameToURL(this.name)
+    const listItem = (list) => {
+
+        return list.map(item =>{
+            return(
+                <li key={item.name}>
+                    <a href={`${item.url()}`}>{item.name}</a>
+                </li>
+            )
+        })
     }
-];
-const nameToURL = (name) =>{
-    const lowercase = name.toLowerCase();
-    const url = lowercase.replace(/\s+/g, "-")
 
-    return url
+    return(
+        <>
+            {
+
+                listItem(data)
+
+            }
+
+        </>
+    )
 }
 
 const Nav = () => {
+
+    const nameToURL = (name) =>{
+        const lowercase = name.toLowerCase();
+        const url = lowercase.replace(/\s+/g, "-")
+
+        return url
+    }
+
+    const links = [
+        {
+            name: "Home",
+            url: function(){
+                return nameToURL(this.name);
+            }
+        },
+        {
+            name: "About",
+            url: function(){
+                return nameToURL(this.name);
+            }
+        },
+        {
+            name: "Menu",
+            url: function(){
+                return nameToURL(this.name);
+            }
+        },
+        {
+            name: "Reservations",
+            url: function(){
+                return nameToURL(this.name);
+            }
+        },
+        {
+            name: "Order online",
+            url: function(){
+                return nameToURL(this.name);
+            }
+        },
+        {
+            name: "Login",
+            url: function(){
+                return nameToURL(this.name);
+            }
+        }
+    ];
+
     return (
         <>
             <nav>
-                
+                <ul>
+                    <List data={links}/>
+                </ul>
             </nav>
         </>
      );
