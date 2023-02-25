@@ -7,43 +7,51 @@ const Products  = ({name, price, url}) => {
         <div>
             <h1>{name}</h1>
             <p>{price}</p>
-            <a href="">{url}</a>
+            <a href={`${url}`}></a>
         </div>
     );
 }
 
-
-test("See if list items are displayed", () => {
-
-    const data = [
-        {
-            id: function(){
-                return this.name
-            },
-            name: "Desert",
-            price: "12.99",
-            url: "/"
+const data = [
+    {
+        id: function(){
+            return this.name
         },
-        {
-            id: function(){
-                return this.name
-            },
-            name: "Toys",
-            price: "10.99",
-            url: "/"
+        name: "Desert",
+        price: "12.99",
+        url: "/"
+    },
+    {
+        id: function(){
+            return this.name
         },
-        {
-            id: function(){
-                return this.name
-            },
-            name: "Food",
-            price: "5.99",
-            url: "/"
-        }
-    ];
+        name: "Toys",
+        price: "10.99",
+        url: "/"
+    },
+    {
+        id: function(){
+            return this.name
+        },
+        name: "Food",
+        price: "5.99",
+        url: "/"
+    }
+];
 
-    render(<List data={data} Component={<Products/>}/>);
+test("See if list items are returned and contain valid content", () => {
+
+
+    render(<List data={data} Component={Products}/>);
     const listItems = screen.getAllByRole("listitem");
-    expect(listItems).toBeInTheDocument();
 
-})
+    expect(listItems).toHaveLength(3);
+
+    listItems.forEach((item, index) => {
+      expect(item).toBeInTheDocument();
+      expect(item.querySelector("h1")).toHaveTextContent(data[index].name);
+      expect(item.querySelector("p")).toHaveTextContent(data[index].price);
+    })
+
+});
+
