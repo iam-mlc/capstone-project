@@ -55,3 +55,8 @@ test("See if list items are returned and contain valid content", () => {
 
 });
 
+test("Check if list is displayed", () =>{
+    render(<UnorderedList data= {data} Component={Products}/>)
+    const list = screen.getByRole("list")
+    expect(list).toBeInTheDocument();
+});
