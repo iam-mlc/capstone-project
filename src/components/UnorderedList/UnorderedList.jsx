@@ -6,7 +6,7 @@ const UnorderedList = ({data, Component}) => {
      );
 }
 
-const List = ({data, Component}) =>{
+export const List = ({data, Component}) =>{
 
     const listItem = (list) => {
 
