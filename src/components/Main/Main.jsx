@@ -1,52 +1,27 @@
 import foodImage from "../../assets/restauranfood.jpg"
 import { ReactComponent as Delivery } from '../../assets/delivery.svg';
+import UnorderedList from "../UnorderedList/UnorderedList";
 
 
-const Products = ({data}) => {
+const ProductCard = ({image, title, price, description, url}) => {
     return (
-        <ul>
-            <List data = {data}/>
-        </ul>
-    );
-}
-const List = ({data}) =>{
-
-    const listItem = (list) => {
-
-        return list.map(item =>{
-
-            const {image, title, price, description, url} = item
-
-            return(
-                <li key={title}>
-                    <img src={image} alt={title} />
-                    <h3>{title}</h3>
-                    <h4>{price}</h4>
-                    <p>{description}</p>
-                    <div>
-                        <a href={url}>Order a delivery</a>
-                        <Delivery/>
-                    </div>
-                </li>
-            )
-        })
-    }
-
-    return(
         <>
-            {
-
-                listItem(data)
-
-            }
-
+        <img src={image} alt={title} />
+        <h3>{title}</h3>
+        <h4>{price}</h4>
+        <p>{description}</p>
+        <div>
+            <a href={url}>Order a delivery</a>
+            <Delivery/>
+        </div>
         </>
-    )
+    );
 }
 
 const Main = () => {
     const products = [
         {
+            id: "Greek salad",
             image: require("../../assets/greek-salad.jpg"),
             title: "Greek salad",
             price: "$12.99",
@@ -54,6 +29,7 @@ const Main = () => {
             url: ""
         },
         {
+            id: "Bruchetta",
             image: require("../../assets/bruchetta.jpeg"),
             title: "Bruchetta",
             price: "$ 5.99",
@@ -61,6 +37,7 @@ const Main = () => {
             url: ""
         },
         {
+            id: "Lemon Dessert",
             image: require("../../assets/lemon-dessert.jpg"),
             title: "Lemon Dessert",
             price: "$ 5.00",
@@ -68,17 +45,18 @@ const Main = () => {
             url: ""
         }
     ]
+
     return (
         <>
             <main className="mobile-grid medium-grid large-grid">
-                <section>
+                <section className="hero">
                     <h1>Little Lemon</h1>
                     <h2>Chicago</h2>
                     <p>We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist </p>
                     <a href="/reserve-a-table">Reserve a Table</a>
                     <img src={foodImage} alt="restaurant food" />
                 </section>
-                <section>
+                <section className="products">
                     <div>
                         <h2>
                             This weeks specials!
@@ -86,7 +64,7 @@ const Main = () => {
                         <a href="/">Online Menu</a>
                     </div>
                     <div>
-                        <Products data={products}/>
+                        <UnorderedList data={products} Component={ProductCard}/>
                     </div>
                 </section>
             </main>
