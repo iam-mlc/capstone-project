@@ -1,5 +1,5 @@
-import foodImage from "../assets/restauranfood.jpg"
-import { ReactComponent as Delivery } from '../assets/delivery.svg';
+import foodImage from "../../assets/restauranfood.jpg"
+import { ReactComponent as Delivery } from '../../assets/delivery.svg';
 
 
 const Products = ({data}) => {
@@ -47,21 +47,21 @@ const List = ({data}) =>{
 const Main = () => {
     const products = [
         {
-            image: require("../assets/greek-salad.jpg"),
+            image: require("../../assets/greek-salad.jpg"),
             title: "Greek salad",
             price: "$12.99",
             description: "The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons. ",
             url: ""
         },
         {
-            image: require("../assets/bruchetta.jpeg"),
+            image: require("../../assets/bruchetta.jpeg"),
             title: "Bruchetta",
             price: "$ 5.99",
             description: "Our Bruschetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil. ",
             url: ""
         },
         {
-            image: require("../assets/lemon-dessert.jpg"),
+            image: require("../../assets/lemon-dessert.jpg"),
             title: "Lemon Dessert",
             price: "$ 5.00",
             description: "This comes straight from grandma’s recipe book, every last ingredient has been sourced and is as authentic as can be imagined.",
