@@ -17,6 +17,18 @@ const ProductCard = ({image, title, price, description, url}) => {
         </>
     );
 }
+const Testimonials = ({name, title, review, image}) =>{
+    return(
+        <div>
+            <article>
+                <h2>{title}</h2>
+                <h3>{name}</h3>
+                <img src={image} alt="" />
+                <p>{review}</p>
+            </article>
+        </div>
+    )
+}
 
 const Main = () => {
     const products = [
@@ -46,6 +58,30 @@ const Main = () => {
         }
     ]
 
+    const testimonials = [
+        {
+            id: "Rating1",
+            image: "",
+            title:"Rating",
+            name: "Name",
+            review: "Review text"
+        },
+        {
+            id: "Rating2",
+            image: "",
+            title:"Rating",
+            name: "Name",
+            review: "Review text"
+        },
+        {
+            id: "Rating3",
+            image: "",
+            title:"Rating",
+            name: "Name",
+            review: "Review text"
+        },
+    ]
+
     return (
         <>
             <main className="mobile-grid medium-grid large-grid">
@@ -66,6 +102,10 @@ const Main = () => {
                     <div>
                         <UnorderedList data={products} Component={ProductCard}/>
                     </div>
+                </section>
+                <section className="testimonials">
+                    <h2>Testimonial</h2>
+                    <UnorderedList data={testimonials} Component = {Testimonials}/>
                 </section>
             </main>
         </>
