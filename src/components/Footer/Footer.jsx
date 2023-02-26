@@ -1,5 +1,6 @@
 import links from "../../utils/navigationLinks.js"
 import UnorderedList from "../UnorderedList/UnorderedList";
+import { ReactComponent as Logo } from "../../assets/Logo.svg";
 
 const FooterNavLinks = ({name, url}) => {
     return(
@@ -14,7 +15,7 @@ const Footer = () => {
         <>
             <footer className="mobile-grid medium-grid large-grid">
                 <div>
-                    <img src="" alt="" />
+                    <Logo/>
                 </div>
                 <div>
                     <h2>Navigation</h2>
