@@ -2,7 +2,7 @@ import foodImage from "../../assets/restauranfood.jpg";
 import { ReactComponent as Delivery } from "../../assets/delivery.svg";
 import UnorderedList from "../UnorderedList/UnorderedList";
 
-const assets = "../../assets"
+const assets = "../../assets";
 
 const ProductCard = ({ image, title, price, description, url }) => {
   return (
@@ -35,7 +35,7 @@ const Main = () => {
   const products = [
     {
       id: "Greek salad",
-      image: require(`${assets}/greek-salad.jpg`),
+      image: require(`../../assets/greek-salad.jpg`),
       title: "Greek salad",
       price: "$12.99",
       description:
@@ -44,7 +44,7 @@ const Main = () => {
     },
     {
       id: "Bruchetta",
-      image: require(`${assets}/bruchetta.jpeg`),
+      image: require(`../../assets/bruchetta.jpeg`),
       title: "Bruchetta",
       price: "$ 5.99",
       description:
@@ -53,7 +53,7 @@ const Main = () => {
     },
     {
       id: "Lemon Dessert",
-      image: require(`${assets}/lemon-dessert.jpg`),
+      image: require(`../../assets/lemon-dessert.jpg`),
       title: "Lemon Dessert",
       price: "$ 5.00",
       description:
@@ -122,8 +122,8 @@ const Main = () => {
             ullamco est sit aliqua dolor do amet sint. Velit officia consequat
             duis enim velit mollit.
           </p>
-          <img src={require(`${assets}/Mario-and-Adrian-A.jpg`)} alt="" />
-          <img src={require(`${assets}/Mario-and-Adrian-b.jpg`)} alt="" />
+          <img src={require(`../../assets/Mario-and-Adrian-A.jpg`)} alt="" />
+          <img src={require(`../../assets/Mario-and-Adrian-b.jpg`)} alt="" />
         </section>
       </main>
     </>
