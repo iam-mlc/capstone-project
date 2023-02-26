@@ -35,7 +35,7 @@ const Main = () => {
   const products = [
     {
       id: "Greek salad",
-      image: require(`${assets}/greek-salad.jp`),
+      image: require(`${assets}/greek-salad.jpg`),
       title: "Greek salad",
       price: "$12.99",
       description:
