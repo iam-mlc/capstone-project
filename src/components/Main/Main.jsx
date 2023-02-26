@@ -2,8 +2,6 @@ import foodImage from "../../assets/restauranfood.jpg";
 import { ReactComponent as Delivery } from "../../assets/delivery.svg";
 import UnorderedList from "../UnorderedList/UnorderedList";
 
-const assets = "../../assets";
-
 const ProductCard = ({ image, title, price, description, url }) => {
   return (
     <>
