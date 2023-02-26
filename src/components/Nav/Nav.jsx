@@ -1,82 +1,21 @@
-const List = ({data}) =>{
+import links from "../../utils/navigationLinks";
+import UnorderedList from "../UnorderedList/UnorderedList";
 
-    const listItem = (list) => {
-
-        return list.map(item =>{
-            return(
-                <li key={item.name}>
-                    <a href={`${item.url()}`}>{item.name}</a>
-                </li>
-            )
-        })
-    }
-
+const NavLinks = ({url, name}) =>{
     return(
         <>
-            {
-
-                listItem(data)
-
-            }
-
+            <a href={`${url()}`}>{name}</a>
         </>
     )
 }
 
+
 const Nav = () => {
-
-    const nameToURL = (name) =>{
-        const lowercase = name.toLowerCase();
-        const url = lowercase.replace(/\s+/g, "-")
-
-        return url
-    }
-
-    const links = [
-        {
-            name: "Home",
-            url: function(){
-                return nameToURL(this.name);
-            }
-        },
-        {
-            name: "About",
-            url: function(){
-                return nameToURL(this.name);
-            }
-        },
-        {
-            name: "Menu",
-            url: function(){
-                return nameToURL(this.name);
-            }
-        },
-        {
-            name: "Reservations",
-            url: function(){
-                return nameToURL(this.name);
-            }
-        },
-        {
-            name: "Order online",
-            url: function(){
-                return nameToURL(this.name);
-            }
-        },
-        {
-            name: "Login",
-            url: function(){
-                return nameToURL(this.name);
-            }
-        }
-    ];
 
     return (
         <>
             <nav>
-                <ul>
-                    <List data={links}/>
-                </ul>
+                <UnorderedList data ={links} Component = {NavLinks}/>
             </nav>
         </>
      );
