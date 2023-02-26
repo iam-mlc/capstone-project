@@ -8,26 +8,26 @@ const nameToURL = (name) =>{
 const links = [
     {
         name: "Home",
-        url: function(){
-            return nameToURL(this.name);
+        url: function(name){
+            return nameToURL(name);
         }
     },
     {
         name: "About",
-        url: function(){
-            return nameToURL(this.name);
+        url: function(name){
+            return nameToURL(name);
         }
     },
     {
         name: "Menu",
-        url: function(){
-            return nameToURL(this.name);
+        url: function(name){
+            return nameToURL(name);
         }
     },
     {
         name: "Reservations",
-        url: function(){
-            return nameToURL(this.name);
+        url: function(name){
+            return nameToURL(name);
         }
     },
     {
