@@ -4,7 +4,7 @@ import UnorderedList from "../UnorderedList/UnorderedList";
 const FooterNavLinks = ({name, url}) => {
     return(
         <>
-            <a href={`${url}`}>{name}</a>
+            <a href={`${url(name)}`}>{name}</a>
         </>
     )
 }

@@ -4,7 +4,7 @@ import UnorderedList from "../UnorderedList/UnorderedList";
 const NavLinks = ({url, name}) =>{
     return(
         <>
-            <a href={`${url()}`}>{name}</a>
+            <a href={`${url(name)}`}>{name}</a>
         </>
     )
 }
