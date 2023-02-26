@@ -9,7 +9,6 @@ const NavLinks = ({url, name}) =>{
     )
 }
 
-
 const Nav = () => {
 
     return (
