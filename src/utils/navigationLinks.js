@@ -32,14 +32,14 @@ const links = [
     },
     {
         name: "Order online",
-        url: function(){
-            return nameToURL(this.name);
+        url: function(name){
+            return nameToURL(name);
         }
     },
     {
         name: "Login",
-        url: function(){
-            return nameToURL(this.name);
+        url: function(name){
+            return nameToURL(name);
         }
     }
 ];
