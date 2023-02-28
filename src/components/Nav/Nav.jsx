@@ -1,5 +1,6 @@
 import links from "../../utils/navigationLinks";
 import UnorderedList from "../UnorderedList/UnorderedList";
+import styles from "./Nav.module.css"
 
 const NavLinks = ({url, name}) =>{
     return(
@@ -10,11 +11,18 @@ const NavLinks = ({url, name}) =>{
 }
 
 const Nav = () => {
+    const style = {
+        parent: `${styles.menu}`,
+        child: `${styles.item}`
+    }
 
     return (
         <>
-            <nav>
-                <UnorderedList data ={links} Component = {NavLinks}/>
+            <nav className={`${styles.nav}`}>
+                <UnorderedList
+                data ={links}
+                Component = {NavLinks}
+                styleElement={style}/>
             </nav>
         </>
      );

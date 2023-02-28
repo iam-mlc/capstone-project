@@ -1,11 +1,11 @@
 const UnorderedList = ({data, Component, styleElement}) => {
 
     return (
-        <ul className={`${styleElement === undefined ? "" : styleElement.parent}`}>
+        <ul className={`${styleElement === undefined ? " " : styleElement.parent}`}>
             <List
             data = {data}
             Component = {Component}
-            styleElement={styleElement === undefined ? "" : styleElement.child}/>
+            styleElement={styleElement === undefined ? " " : styleElement.child}/>
         </ul>
      );
 }

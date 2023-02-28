@@ -1,0 +1,85 @@
+@media screen and (min-width: 6.25em) and (max-width: 21.875em ){
+
+}
+@media screen and (min-width: 48.0625em) and (max-width: 64em){
+
+}
+@media screen and (min-width: 64.0625em){
+
+    .products{
+      
+    }
+    .products > div{
+        grid-column: 3 / span 8;
+    }
+    .products > div:nth-child(1){
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .products > div:nth-child(1) h2{
+        font-family: 'Markazi Text', serif;
+        font-size: 3.3331em;
+    }
+
+    .list{
+        display: flex;
+        /* flex-wrap: wrap; */
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 2em;
+    }
+    .list_item{
+        /* border: 1px solid; */
+        flex: 1;
+        gap: 1em;
+        height: 35em;
+        background-color: #EDEFEE;
+        border-radius: 1em 1em 0em 0em;
+    }
+    .image{
+        position: relative;
+        grid-area: image;
+        height: 11em;
+        overflow: hidden;
+        border-radius: 1em 1em 0em 0em;
+    }
+    .image img{
+        position: absolute;
+        width: 40em;
+    }
+    .details{
+        display: flex;
+        flex-direction: column;
+        gap: 3em;
+        padding: 1.5em;
+       
+    }
+    .title{
+        display: flex;
+        justify-content: space-between;
+    }
+    .title > * {
+        font-family: 'Markazi Text', serif;
+        font-weight: 800;
+        font-size: 1.5em;
+    }
+    .title > h4{
+        color: var(--primary);
+    }
+    .text{
+     /* border: 1px solid; */
+     height: 10em;
+    }
+    .button{
+        display: flex;
+        align-items: center;
+        gap: 1em;
+        /* border: 1px solid; */
+    }
+    .button span{
+        font-weight: 700;
+    }
+
+}

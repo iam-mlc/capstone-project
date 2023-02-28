@@ -1,0 +1,59 @@
+@media screen and (min-width: 6.25em) and (max-width: 21.875em ){
+
+}
+@media screen and (min-width: 48.0625em) and (max-width: 64em){
+
+}
+@media screen and (min-width: 64.0625em){
+
+    :root{
+        --heading-gap: 0.5em;
+    }
+    .footer{
+        padding: 4em;
+    }
+    .logo{
+        grid-column: 3 / span 2;
+        width: 5em;
+        /* margin: auto; */
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    .navigation{
+        grid-column: 5/ span 2;
+        display: flex;
+        flex-direction: column;
+        gap: var(--heading-gap);
+    }
+    .address{
+        grid-column: 7/ span 2;
+        display: flex;
+        flex-direction: column;
+        gap: var(--heading-gap);
+    }
+    .address > address{
+        display: flex;
+        flex-direction: column;
+    }
+    .social_links{
+        grid-column: 9/span 2;
+        display: flex;
+        flex-direction: column;
+        gap: var(--heading-gap);
+    }
+    .social_links h2{
+        text-align: center;
+    }
+    .social_icons ul{
+        display: flex;
+        gap: 1em;
+    }
+    .icon{
+        display: block;
+        width: 2em;
+        /* border: 2px solid; */
+    }
+    .icon svg{
+        fill: var(--secondary) ;
+    }
+}
