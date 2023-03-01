@@ -1,8 +1,12 @@
 import styles from "./FirstSection.module.css";
 import foodImage from "../../../../assets/restauranfood.jpg";
 import Button from "../../../../components/Button/Button";
+import navigationLinks from "../../../../utils/navigationLinks"
 
 const FirstSection = () => {
+
+  const {name: reservations, url} = navigationLinks[3]
+
   return (
     <div className={`${styles.hero}`}>
       <div className={`${styles.hero_details}`}>
@@ -14,10 +18,10 @@ const FirstSection = () => {
           We are a family owned Mediterranean restaurant, focused on traditional
           recipes served with a modern twist{" "}
         </p>
-        <Button 
-          text={"Reserve a Table"} 
-          role={"link"} 
-          url={"/reserve-a-table"}
+        <Button
+          text={"Reserve a Table"}
+          role={"link"}
+          url={url(reservations)}
         />
       </div>
       <div className="hero_image">
