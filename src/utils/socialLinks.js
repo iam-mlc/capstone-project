@@ -5,33 +5,25 @@ import { ReactComponent as Twitter } from "../assets/Social-media-icons/twitter.
 
 const socialLinks = [
     {
-        id: function(name){
-            return name
-        },
+        id: "Facebook",
         name: "Facebook",
         icon: <Facebook/>,
         url: "https://www.facebook.com/"
     },
     {
-        id: function(name){
-            return name
-        },
+        id: "Instagram",
         name: "Instagram",
         icon: <Instagram/>,
         url: "https://www.instagram.com/"
     },
     {
-        id: function(name){
-            return name
-        },
+        id: "Whatsapp",
         name: "Whatsapp",
         icon: <Whatsapp/>,
         url: "https://web.whatsapp.com/"
     },
     {
-        id: function(name){
-            return name
-        },
+        id: "Twitter",
         name: "Twitter",
         icon: <Twitter/>,
         url: "https://twitter.com/"
