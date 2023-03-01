@@ -20,6 +20,13 @@ const Button = ({text, role, url}) => {
                 </>
              );
         }
+        case "submit" : {
+            return(
+                <>
+                    <input type="submit" value={text} className={`${styles.button}`}/>
+                </>
+            )
+        }
         default: {
             return (
                 <>
