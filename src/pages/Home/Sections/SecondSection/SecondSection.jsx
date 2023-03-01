@@ -1,8 +1,8 @@
-import UnorderedList from "../../../UnorderedList/UnorderedList";
+import UnorderedList from "../../../../components/UnorderedList/UnorderedList";
 import products from "../../../../utils/products";
 import styles from "./SecondSection.module.css";
 import { ReactComponent as Delivery } from "../../../../assets/delivery.svg";
-import Button from "../../../Button/Button";
+import Button from "../../../../components/Button/Button";
 import grids from "../../../../utils/cssGridClassNames";
 
 const ProductCard = ({ image, title, price, description, url }) => {

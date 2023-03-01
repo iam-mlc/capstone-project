@@ -1,11 +1,11 @@
-import styles from "./Main.module.css"
+import styles from "./Home.module.css"
 import FirstSection from "./Sections/FirstSection/FirstSection";
 import SecondSection from "./Sections/SecondSection/SecondSection";
 import ThirdSection from "./Sections/ThirdSection/ThirdSection";
 import FourthSection from "./Sections/FourthSection/FourthSection";
 import grids from "../../utils/cssGridClassNames";
 
-const Main = () => {
+const Home = () => {
 
   return (
     <>
@@ -27,4 +27,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default Home;

@@ -1,6 +1,6 @@
 import styles from "./FirstSection.module.css";
 import foodImage from "../../../../assets/restauranfood.jpg";
-import Button from "../../../Button/Button";
+import Button from "../../../../components/Button/Button";
 
 const FirstSection = () => {
   return (

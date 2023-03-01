@@ -1,4 +1,4 @@
-import UnorderedList from "../../../UnorderedList/UnorderedList";
+import UnorderedList from "../../../../components/UnorderedList/UnorderedList";
 import testimonials from "../../../../utils/testimonials";
 import styles from "./ThirdSection.module.css";
 import grids from "../../../../utils/cssGridClassNames";
