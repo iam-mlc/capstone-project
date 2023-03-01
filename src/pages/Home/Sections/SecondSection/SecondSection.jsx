@@ -4,6 +4,7 @@ import styles from "./SecondSection.module.css";
 import { ReactComponent as Delivery } from "../../../../assets/delivery.svg";
 import Button from "../../../../components/Button/Button";
 import grids from "../../../../utils/cssGridClassNames";
+import navigationLinks from "../../../../utils/navigationLinks";
 
 const ProductCard = ({ image, title, price, description, url }) => {
   return (
@@ -28,6 +29,8 @@ const ProductCard = ({ image, title, price, description, url }) => {
 
 const SecondSection = () => {
 
+  const {name: orderOnline, url} = navigationLinks[4]
+
   const style = {
     parent: styles.list,
     child: styles.list_item,
@@ -37,7 +40,7 @@ const SecondSection = () => {
     <div className={`${styles.products} ${grids}`}>
       <div>
         <h2>This weeks specials!</h2>
-        <Button text={"Online Menu"} role={"link"}/>
+        <Button text={"Online Menu"} role={"link"} url={url(orderOnline)}/>
       </div>
       <div className="">
         <UnorderedList
