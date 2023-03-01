@@ -18,7 +18,7 @@ const links = names.map((item) =>{
     return {
         ...item,
         id: item.name,
-        url: nameToURL(item.name)
+        url: nameToURL(item.name)  === "home" ? "/" : nameToURL(item.name)
     }
 })
 
