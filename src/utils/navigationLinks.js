@@ -9,7 +9,7 @@ const links = [
     {
         name: "Home",
         url: function(name){
-            return nameToURL(name);
+            return nameToURL(name) === "home" ? "/" : nameToURL(name);
         }
     },
     {
