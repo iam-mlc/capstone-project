@@ -5,43 +5,22 @@ const nameToURL = (name) =>{
     return url
 }
 
-const links = [
-    {
-        name: "Home",
-        url: function(name){
-            return nameToURL(name) === "home" ? "/" : nameToURL(name);
-        }
-    },
-    {
-        name: "About",
-        url: function(name){
-            return nameToURL(name);
-        }
-    },
-    {
-        name: "Menu",
-        url: function(name){
-            return nameToURL(name);
-        }
-    },
-    {
-        name: "Reservations",
-        url: function(name){
-            return nameToURL(name);
-        }
-    },
-    {
-        name: "Order online",
-        url: function(name){
-            return nameToURL(name);
-        }
-    },
-    {
-        name: "Login",
-        url: function(name){
-            return nameToURL(name);
-        }
-    }
+const names = [
+    {name: "Home"},
+    {name: "About"},
+    {name: "Menu"},
+    {name: "Reservations"},
+    {name: "Order online"},
+    {name: "Login"}
 ];
+
+const links = names.map((item) =>{
+    return {
+        ...item,
+        id: item.name,
+        url: nameToURL(item.name)
+    }
+})
+
 
 export default links;
