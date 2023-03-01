@@ -1,11 +1,12 @@
 import links from "../../utils/navigationLinks";
 import UnorderedList from "../UnorderedList/UnorderedList";
 import styles from "./Nav.module.css"
+import { NavLink } from "react-router-dom";
 
 const NavLinks = ({url, name}) =>{
     return(
         <>
-            <a href={`${url(name)}`}>{name}</a>
+            <NavLink to={`${url(name)}`}>{name}</NavLink>
         </>
     )
 }

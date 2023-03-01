@@ -1,4 +1,5 @@
 import styles from "./Button.module.css"
+import { Link } from "react-router-dom";
 
 const Button = ({text, role, url}) => {
 
@@ -8,7 +9,7 @@ const Button = ({text, role, url}) => {
         case "link" : {
             return (
                 <>
-                    <a href={`${path}`} className={`${styles.button}`}>{text}</a>
+                    <Link to={`${path}`} className={`${styles.button}`}>{text}</Link>
                 </>
             );
         }
@@ -22,7 +23,7 @@ const Button = ({text, role, url}) => {
         default: {
             return (
                 <>
-                    <a href={`${path}`} className={`${styles.button}`}>{text}</a>
+                    <Link to={`${path}`} className={`${styles.button}`}>{text}</Link>
                 </>
             );
         }

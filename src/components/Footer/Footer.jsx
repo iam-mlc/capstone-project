@@ -5,12 +5,13 @@ import grids from "../../utils/cssGridClassNames.js";
 import logo from "../../assets/Little-Lemon-logos/Asset 20@4x.png"
 import styles from "./Footer.module.css"
 import socialLinks from "../../utils/socialLinks.js"
+import { Link } from "react-router-dom";
 
 
 const FooterNavLinks = ({name, url}) => {
     return(
         <>
-            <a href={`${url(name)}`}>{name}</a>
+            <Link to={`${url(name)}`}>{name}</Link>
         </>
     )
 }
