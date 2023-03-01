@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 const FooterNavLinks = ({name, url}) => {
     return(
         <>
-            <Link to={`${url(name)}`}>{name}</Link>
+            <Link to={`${url}`}>{name}</Link>
         </>
     )
 }
@@ -19,7 +19,7 @@ const FooterNavLinks = ({name, url}) => {
 const FooterSocialLinks = ({icon, url}) => {
     return(
         <>
-            <a href={url} className={`${styles.icon}`}>{icon}</a>
+            <Link to={url} target="_blank" className={`${styles.icon}`}>{icon}</Link>
         </>
     )
 }

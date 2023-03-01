@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 const NavLinks = ({url, name}) =>{
     return(
         <>
-            <NavLink to={`${url(name)}`}>{name}</NavLink>
+            <NavLink to={`${url}`}>{name}</NavLink>
         </>
     )
 }

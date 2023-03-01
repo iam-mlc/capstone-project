@@ -40,7 +40,7 @@ const SecondSection = () => {
     <div className={`${styles.products} ${grids}`}>
       <div>
         <h2>This weeks specials!</h2>
-        <Button text={"Online Menu"} role={"link"} url={url(orderOnline)}/>
+        <Button text={"Online Menu"} role={"link"} url={url}/>
       </div>
       <div className="">
         <UnorderedList

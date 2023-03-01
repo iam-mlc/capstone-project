@@ -21,7 +21,7 @@ const FirstSection = () => {
         <Button
           text={"Reserve a Table"}
           role={"link"}
-          url={url(reservations)}
+          url={url}
         />
       </div>
       <div className="hero_image">
