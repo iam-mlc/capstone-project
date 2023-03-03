@@ -24,7 +24,7 @@
 .form input[type = "date"]{
     text-align: center;
 }
-.form select[name ="time"]{
+.form select[name ="chooseTime"]{
     text-align: center;
     height: 2em;
 }
