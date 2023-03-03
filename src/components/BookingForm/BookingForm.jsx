@@ -5,6 +5,7 @@ import { object, string, number, date} from 'yup';
 import { useState } from "react";
 import TextInput from "./TextInput/TextInput";
 import ErrorMessage from "./ErrorMessage/ErrorMessage";
+import DateInput from "./DateInput/DateInput";
 
 
 const BookingForm = () => {
@@ -18,16 +19,16 @@ const BookingForm = () => {
 
     const bookingSchema = object({
         firstName: string().min(2, "This first name is too short").max(50, "This first name is too long").required("Please write your first name"),
-        lname: string().min(2, "This last name is too short").max(50, "This last name is too long").required("Please write your last name"),
-        date: date().required("Please choose a date").min(minimumDate, "Please choose a date starting from today"),
+        lastName: string().min(2, "This last name is too short").max(50, "This last name is too long").required("Please write your last name"),
+        chooseDate: date().required("Please choose a date").min(minimumDate, "Please choose a date starting from today"),
         guests: number().integer().min(1,"Number has to be larger than 0").max(10, `Sorry ! Our tables only take a maximum of 10 guests`).required("Please write the number of guests"),
     });
 
     const formik = useFormik({
         initialValues: {
             firstName: "",
-            lname: "",
-            date:"",
+            lastName: "",
+            chooseDate:"",
             time: "17:00",
             guests: "",
             occasion: "Birthday",
@@ -56,14 +57,7 @@ const BookingForm = () => {
                     <TextInput text ={"Last Name"} formik = {formik}/>
                 </div>
                 <div className={`${styles.single_col}`}>
-                    <label htmlFor="res-date">Choose date</label>
-                    <input
-                        type="date"
-                        name="date"
-                        id="res-date"
-                        {...formik.getFieldProps("date")}
-                    />
-                    <ErrorMessage name={"date"} formik={formik}/>
+                    <DateInput label={"Choose date"} formik={formik}/>
                 </div>
                 <div className={`${styles.single_col}`}>
                     <label htmlFor="res-time">Choose time</label>
