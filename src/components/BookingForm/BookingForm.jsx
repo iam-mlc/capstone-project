@@ -6,6 +6,9 @@ import { useState } from "react";
 import TextInput from "./TextInput/TextInput";
 import ErrorMessage from "./ErrorMessage/ErrorMessage";
 import DateInput from "./DateInput/DateInput";
+import SelectInput from "./SelectInput/SelectInput";
+import bookingHours from "../../utils/bookingHours";
+import bookingOccasion from "../../utils/bookingOccasion";
 
 
 const BookingForm = () => {
@@ -29,7 +32,7 @@ const BookingForm = () => {
             firstName: "",
             lastName: "",
             chooseDate:"",
-            time: "17:00",
+            chooseTime: "17:00",
             guests: "",
             occasion: "Birthday",
         },
@@ -60,16 +63,7 @@ const BookingForm = () => {
                     <DateInput label={"Choose date"} formik={formik}/>
                 </div>
                 <div className={`${styles.single_col}`}>
-                    <label htmlFor="res-time">Choose time</label>
-                    <select name="time" id="res-time" {...formik.getFieldProps("time")}>
-                        <option value="17:00"> 17:00 </option>
-                        <option value="18:00"> 18:00 </option>
-                        <option value="19:00"> 19:00 </option>
-                        <option value="20:00 "> 20:00 </option>
-                        <option value="21:00"> 21:00 </option>
-                        <option value="22:00"> 22:00 </option>
-                    </select>
-                    <ErrorMessage name={"time"} formik={formik}/>
+                    <SelectInput label={"Choose time"} formik={formik} data={bookingHours}/>
                 </div>
                 <div className={`${styles.single_col}`}>
                     <label htmlFor="guests">Number of guests</label>
@@ -84,11 +78,7 @@ const BookingForm = () => {
                     <ErrorMessage name={"guests"} formik={formik}/>
                 </div>
                 <div className={`${styles.single_col}`}>
-                    <label htmlFor="occasion">Occasion</label>
-                    <select name="occasion" id="occasion" {...formik.getFieldProps("occasion")}>
-                        <option value="Birthday">Birthday</option>
-                        <option value="Anniversary">Anniversary</option>
-                    </select>
+                    <SelectInput label={"Occasion"} formik ={formik} data={bookingOccasion}/>
                 </div >
                 <div className={`${styles.single_col} ${styles.button}`}>
                     <Button text={"Make Your reservation"} role="submit"/>
