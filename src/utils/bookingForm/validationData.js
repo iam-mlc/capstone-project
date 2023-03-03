@@ -2,17 +2,6 @@ import toCamelCase from "../toCamelCase";
 import { object, string, number, date } from "yup";
 import currentDate from "./currentDate";
 
-const inputLabels = [
-  "First Name",
-  "Last Name",
-  "Choose date",
-  "Choose time",
-  "Number of guests",
-  "Occasion",
-];
-
-let initialValues = {};
-
 let validationData = [
   {
     label: "First Name",
