@@ -3,6 +3,8 @@ import styles from "./BookingForm.module.css";
 import { useFormik } from 'formik';
 import { object, string, number, date} from 'yup';
 import { useState } from "react";
+import TextInput from "./TextInput/TextInput";
+import ErrorMessage from "./ErrorMessage/ErrorMessage";
 
 
 const BookingForm = () => {
@@ -15,7 +17,7 @@ const BookingForm = () => {
     const [isValid, setValid] = useState(true)
 
     const bookingSchema = object({
-        fname: string().min(2, "This first name is too short").max(50, "This first name is too long").required("Please write your first name"),
+        firstName: string().min(2, "This first name is too short").max(50, "This first name is too long").required("Please write your first name"),
         lname: string().min(2, "This last name is too short").max(50, "This last name is too long").required("Please write your last name"),
         date: date().required("Please choose a date").min(minimumDate, "Please choose a date starting from today"),
         guests: number().integer().min(1,"Number has to be larger than 0").max(10, `Sorry ! Our tables only take a maximum of 10 guests`).required("Please write the number of guests"),
@@ -23,7 +25,7 @@ const BookingForm = () => {
 
     const formik = useFormik({
         initialValues: {
-            fname: "",
+            firstName: "",
             lname: "",
             date:"",
             time: "17:00",
@@ -37,46 +39,21 @@ const BookingForm = () => {
             resetForm()
         }
     });
-    console.log(formik)
 
     const handleSubmit = (e) =>{
         e.preventDefault()
         formik.handleSubmit()
     }
 
-    const ErrorMessage = ({name}) => {
-        const errors = formik.errors[`${name}`] && formik.touched[`${name}`];
-        const style = styles.error
-
-    return(
-        <div>
-            { errors ? <div className={`${style}`}>{formik.errors[`${name}`]}</div> : null}
-        </div>
-    )
-}
 
     return (
         <>
             <form onSubmit={handleSubmit} className={`${styles.form}`}>
                 <div className={`${styles.single_col}`}>
-                    <label htmlFor="fname">First Name</label>
-                    <input
-                        type="text"
-                        name="fname"
-                        id="fname"
-                        {...formik.getFieldProps("fname")}
-                    />
-                    <ErrorMessage name={"fname"}/>
+                    <TextInput text ={"First Name"} formik = {formik}/>
                 </div>
                 <div className={`${styles.single_col}`}>
-                    <label htmlFor="lname">Last Name</label>
-                    <input
-                        type="text"
-                        name="lname"
-                        id="lname"
-                        {...formik.getFieldProps("lname")}
-                    />
-                    <ErrorMessage name={"lname"}/>
+                    <TextInput text ={"Last Name"} formik = {formik}/>
                 </div>
                 <div className={`${styles.single_col}`}>
                     <label htmlFor="res-date">Choose date</label>
@@ -86,7 +63,7 @@ const BookingForm = () => {
                         id="res-date"
                         {...formik.getFieldProps("date")}
                     />
-                    <ErrorMessage name={"date"}/>
+                    <ErrorMessage name={"date"} formik={formik}/>
                 </div>
                 <div className={`${styles.single_col}`}>
                     <label htmlFor="res-time">Choose time</label>
@@ -98,7 +75,7 @@ const BookingForm = () => {
                         <option value="21:00"> 21:00 </option>
                         <option value="22:00"> 22:00 </option>
                     </select>
-                    <ErrorMessage name={"time"}/>
+                    <ErrorMessage name={"time"} formik={formik}/>
                 </div>
                 <div className={`${styles.single_col}`}>
                     <label htmlFor="guests">Number of guests</label>
@@ -110,7 +87,7 @@ const BookingForm = () => {
                         max="10"
                         {...formik.getFieldProps("guests")}
                     />
-                    <ErrorMessage name={"guests"}/>
+                    <ErrorMessage name={"guests"} formik={formik}/>
                 </div>
                 <div className={`${styles.single_col}`}>
                     <label htmlFor="occasion">Occasion</label>
