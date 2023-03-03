@@ -20,7 +20,7 @@ const OptionsInput = ({data}) => {
 
     const options = data.map((option) =>{
         return(
-            <option value={`${option.value}`}>{option.value}</option>
+            <option key={option.value} value={`${option.value}`}>{option.value}</option>
         )
     })
 
