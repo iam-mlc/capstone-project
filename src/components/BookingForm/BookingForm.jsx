@@ -9,6 +9,7 @@ import DateInput from "./DateInput/DateInput";
 import SelectInput from "./SelectInput/SelectInput";
 import bookingHours from "../../utils/bookingHours";
 import bookingOccasion from "../../utils/bookingOccasion";
+import NumberInput from "./NumberInput/NumberInput";
 
 
 const BookingForm = () => {
@@ -24,7 +25,7 @@ const BookingForm = () => {
         firstName: string().min(2, "This first name is too short").max(50, "This first name is too long").required("Please write your first name"),
         lastName: string().min(2, "This last name is too short").max(50, "This last name is too long").required("Please write your last name"),
         chooseDate: date().required("Please choose a date").min(minimumDate, "Please choose a date starting from today"),
-        guests: number().integer().min(1,"Number has to be larger than 0").max(10, `Sorry ! Our tables only take a maximum of 10 guests`).required("Please write the number of guests"),
+        numberOfGuests: number().integer().min(1,"Number has to be larger than 0").max(10, `Sorry ! Our tables only take a maximum of 10 guests`).required("Please write the number of guests"),
     });
 
     const formik = useFormik({
@@ -33,7 +34,7 @@ const BookingForm = () => {
             lastName: "",
             chooseDate:"",
             chooseTime: "17:00",
-            guests: "",
+            numberOfGuests: "",
             occasion: "Birthday",
         },
         validationSchema: bookingSchema,
@@ -66,16 +67,7 @@ const BookingForm = () => {
                     <SelectInput label={"Choose time"} formik={formik} data={bookingHours}/>
                 </div>
                 <div className={`${styles.single_col}`}>
-                    <label htmlFor="guests">Number of guests</label>
-                    <input
-                        type="number"
-                        name="guests"
-                        id="guests"
-                        min="1"
-                        max="10"
-                        {...formik.getFieldProps("guests")}
-                    />
-                    <ErrorMessage name={"guests"} formik={formik}/>
+                    <NumberInput label={"Number of guests"} formik={formik}/>
                 </div>
                 <div className={`${styles.single_col}`}>
                     <SelectInput label={"Occasion"} formik ={formik} data={bookingOccasion}/>
