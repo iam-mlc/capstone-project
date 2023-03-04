@@ -1,16 +1,16 @@
-import Button from "../Button/Button";
+import Button from "../../Button/Button";
 import styles from "./BookingForm.module.css";
 import { useFormik } from "formik";
 import { useState } from "react";
-import TextInput from "./TextInput/TextInput";
-import DateInput from "./DateInput/DateInput";
-import SelectInput from "./SelectInput/SelectInput";
-import bookingHours from "../../utils/bookingForm/bookingHours";
-import bookingOccasion from "../../utils/bookingForm/bookingOccasion";
-import NumberInput from "./NumberInput/NumberInput";
-import validationData from "../../utils/bookingForm/validationData";
-import initialValues from "../../utils/bookingForm/formik/initialValues";
-import bookingSchema from "../../utils/bookingForm/formik/validationSchema";
+import TextInput from "../TextInput/TextInput";
+import DateInput from "../DateInput/DateInput";
+import SelectInput from "../SelectInput/SelectInput";
+import bookingHours from "../../../utils/bookingForm/bookingHours";
+import bookingOccasion from "../../../utils/bookingForm/bookingOccasion";
+import NumberInput from "../NumberInput/NumberInput";
+import validationData from "../../../utils/bookingForm/validationData";
+import initialValues from "../../../utils/bookingForm/formik/initialValues";
+import bookingSchema from "../../../utils/bookingForm/formik/validationSchema";
 
 const BookingForm = () => {
 
