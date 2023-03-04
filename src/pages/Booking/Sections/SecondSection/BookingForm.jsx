@@ -1,18 +1,18 @@
-import Button from "../../Button/Button";
+import Button from "../../../../components/Button/Button";
 import styles from "./BookingForm.module.css";
 import { useFormik } from "formik";
 import { useState } from "react";
-import TextInput from "../TextInput/TextInput";
-import DateInput from "../DateInput/DateInput";
-import SelectInput from "../SelectInput/SelectInput";
-import bookingHours from "../../../utils/bookingForm/bookingHours";
-import bookingOccasion from "../../../utils/bookingForm/bookingOccasion";
-import NumberInput from "../NumberInput/NumberInput";
-import validationData from "../../../utils/bookingForm/validationData";
-import initialValues from "../../../utils/bookingForm/formik/initialValues";
-import bookingSchema from "../../../utils/bookingForm/formik/validationSchema";
+import TextInput from "../../../../components/Forms/TextInput/TextInput";
+import DateInput from "../../../../components/Forms/DateInput/DateInput";
+import SelectInput from "../../../../components/Forms/SelectInput/SelectInput";
+import bookingHours from "../../../../utils/bookingForm/bookingHours";
+import bookingOccasion from "../../../../utils/bookingForm/bookingOccasion";
+import NumberInput from "../../../../components/Forms/NumberInput/NumberInput";
+import validationData from "../../../../utils/bookingForm/validationData";
+import initialValues from "../../../../utils/bookingForm/formik/initialValues";
+import bookingSchema from "../../../../utils/bookingForm/formik/validationSchema";
 
-const BookingForm = () => {
+const BookingForm = ({availableTimes}) => {
 
     const [isValid, setValid] = useState(true);
 
@@ -53,7 +53,7 @@ const BookingForm = () => {
           <DateInput label={chooseDate.label} formik={formik} />
         </div>
         <div className={`${styles.single_col}`}>
-          <SelectInput label={chooseTime.label} formik={formik} data={bookingHours} />
+          <SelectInput label={chooseTime.label} formik={formik} data={availableTimes} />
         </div>
         <div className={`${styles.single_col}`}>
           <NumberInput label={numberOfGuests.label} formik={formik} />
