@@ -14,6 +14,8 @@ import bookingSchema from "../../../../utils/bookingForm/formik/validationSchema
 
 const BookingForm = ({availableTimes, handleData, updateTimes}) => {
 
+  const [isInvalid, setIsInvalid] = useState(null)
+
   const [
     firstName,
     lastName,
@@ -27,7 +29,6 @@ const BookingForm = ({availableTimes, handleData, updateTimes}) => {
     initialValues: initialValues,
     validationSchema: bookingSchema,
     onSubmit: (values, { setSubmitting, resetForm }) => {
-      window.alert(JSON.stringify(values, null, 2));
       handleData(values)
       setSubmitting(false);
       resetForm();
@@ -37,6 +38,16 @@ const BookingForm = ({availableTimes, handleData, updateTimes}) => {
   useEffect(() => {
     updateTimes(formik.values.chooseDate)
   }, [formik.values.chooseDate])
+
+  useEffect(() => {
+
+    if(Object.keys(formik.errors).length){
+      setIsInvalid(true)
+    }
+    else{
+      setIsInvalid(false)
+    }
+  }, [formik.errors])
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -69,7 +80,7 @@ const BookingForm = ({availableTimes, handleData, updateTimes}) => {
           />
         </div>
         <div className={`${styles.single_col} ${styles.button}`}>
-          <Button text={"Make Your reservation"} role="submit" />
+          <Button text={"Make Your reservation"} role="submit" isDisabled={isInvalid}/>
         </div>
       </form>
     </>
