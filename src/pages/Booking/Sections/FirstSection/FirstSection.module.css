@@ -29,3 +29,6 @@
 .image{
     width: 26em;
 }
+.image img{
+    border-radius: 1em;
+}
