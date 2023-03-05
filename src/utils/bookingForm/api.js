@@ -22,7 +22,14 @@ const fetchAPI = function(date) {
     return result;
 };
 const submitAPI = function(formData) {
-    return true;
+
+    if(formData){
+        return true;
+    }
+    else{
+        return false
+    }
+    
 };
 
 export {fetchAPI, submitAPI}
