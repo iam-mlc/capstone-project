@@ -2,7 +2,6 @@ import toCamelCase from "../../../utils/toCamelCase";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 
 const SelectInput = ({ label, formik, data }) => {
-
     const inputName = toCamelCase(label)
 
   return (
@@ -20,7 +19,7 @@ const OptionsInput = ({data}) => {
 
     const options = data.map((option) =>{
         return(
-            <option key={option.value} value={`${option.value}`}>{option.value}</option>
+            <option key={option} value={`${option}`}>{option}</option>
         )
     })
 
