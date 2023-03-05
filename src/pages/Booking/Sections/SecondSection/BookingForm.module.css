@@ -9,6 +9,9 @@
     display: flex;
     flex-direction: column;
 }
+.single_col:not(:last-child){
+    height: 5em;
+}
 .form input:not([type = "submit"]),
 .form select{
     width: 20em;
