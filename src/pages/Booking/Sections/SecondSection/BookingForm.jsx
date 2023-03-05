@@ -1,7 +1,7 @@
 import Button from "../../../../components/Button/Button";
 import styles from "./BookingForm.module.css";
 import { useFormik } from "formik";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import TextInput from "../../../../components/Forms/TextInput/TextInput";
 import DateInput from "../../../../components/Forms/DateInput/DateInput";
 import SelectInput from "../../../../components/Forms/SelectInput/SelectInput";
@@ -12,9 +12,7 @@ import validationData from "../../../../utils/bookingForm/validationData";
 import initialValues from "../../../../utils/bookingForm/formik/initialValues";
 import bookingSchema from "../../../../utils/bookingForm/formik/validationSchema";
 
-const BookingForm = ({availableTimes}) => {
-
-    const [isValid, setValid] = useState(true);
+const BookingForm = ({availableTimes, handleData, updateTimes}) => {
 
   const [
     firstName,
@@ -30,10 +28,15 @@ const BookingForm = ({availableTimes}) => {
     validationSchema: bookingSchema,
     onSubmit: (values, { setSubmitting, resetForm }) => {
       window.alert(JSON.stringify(values, null, 2));
+      handleData(values)
       setSubmitting(false);
       resetForm();
     },
   });
+
+  useEffect(() => {
+    updateTimes(formik.values.chooseDate)
+  }, [formik.values.chooseDate])
 
   const handleSubmit = (e) => {
     e.preventDefault();
