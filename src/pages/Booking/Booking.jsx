@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import BookingForm from "./Sections/SecondSection/BookingForm";
 import grids from "../../utils/cssGridClassNames";
 import styles from "./Booking.module.css";
@@ -8,7 +9,8 @@ import { fetchAPI, submitAPI } from "../../utils/bookingForm/api";
 
 const Booking = () => {
   const [availableTimes, setAvailableTimes] = useState([...bookingHours]);
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(null);
+  const navigate = useNavigate();
 
 
   const updateTimes = (date) => {
@@ -16,9 +18,12 @@ const Booking = () => {
       setAvailableTimes(times)
   };
   const handleData = (data) => {
+    const isValid = submitAPI(data)
+    if(isValid){
       setData(data)
+      navigate("/confirmed-booking")
+    }
   };
-
 
   return (
     <main className={`${grids} ${styles.main}`}>
