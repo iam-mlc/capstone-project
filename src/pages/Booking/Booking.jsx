@@ -27,7 +27,7 @@ const Booking = () => {
 
   return (
     <main className={`${grids} ${styles.main}`}>
-      <section>
+      <section role="banner" aria-label="Reserve a table at Little Lemon Restaurant">
         <FirstSection />
       </section>
       <section>

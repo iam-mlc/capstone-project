@@ -10,16 +10,16 @@ const Home = () => {
   return (
     <>
       <main className={`${grids} ${styles.main}`}>
-        <section>
+        <section role="banner" aria-label="Welcome to the Little Lemon Restaurant website">
           <FirstSection/>
         </section>
         <section>
           <SecondSection/>
         </section>
-        <section>
+        <section aria-label="Customer Testimonials">
           <ThirdSection/>
         </section>
-        <section>
+        <section aria-label="About us">
           <FourthSection/>
         </section>
       </main>

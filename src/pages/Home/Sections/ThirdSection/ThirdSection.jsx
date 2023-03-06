@@ -29,11 +29,12 @@ const ThirdSection = () => {
       <div className={`${styles.title}`}>
         <h2>Testimonial</h2>
       </div>
-      <div>
+      <div role="list">
         <UnorderedList
           data={testimonials}
           Component={TestimonialsCard}
           styleElement={style}
+          role="listitem"
         />
       </div>
     </div>

@@ -19,11 +19,12 @@ const Nav = () => {
 
     return (
         <>
-            <nav className={`${styles.nav}`}>
+            <nav className={`${styles.nav}`} role="navigation">
                 <UnorderedList
                 data ={links}
                 Component = {NavLinks}
-                styleElement={style}/>
+                styleElement={style}
+                role="menuitem"/>
             </nav>
         </>
      );

@@ -56,7 +56,7 @@ const BookingForm = ({availableTimes, handleData, updateTimes}) => {
 
   return (
     <>
-      <form onSubmit={handleSubmit} className={`${styles.form}`}>
+      <form onSubmit={handleSubmit} className={`${styles.form}`} >
         <div className={`${styles.single_col}`}>
           <TextInput text={firstName.label} formik={formik} />
         </div>
