@@ -1,0 +1,10 @@
+.confirmed{
+    display: flex;
+    justify-content: center;
+    padding: 10em;
+}
+.confirmed p{
+    font-family: var(--secondary-font);
+    font-size: 4em;
+    text-align: center;
+}

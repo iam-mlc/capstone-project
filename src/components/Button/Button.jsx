@@ -1,8 +1,7 @@
 import styles from "./Button.module.css"
 import { Link } from "react-router-dom";
 
-const Button = ({text, role, url}) => {
-
+const Button = ({text, role, url, isDisabled}) => {
     const path = url === undefined ? "/" : url
 
     switch(role){
@@ -23,7 +22,7 @@ const Button = ({text, role, url}) => {
         case "submit" : {
             return(
                 <>
-                    <input type="submit" value={text} className={`${styles.button}`}/>
+                    <input type="submit" value={text} className={`${styles.button}`} disabled={isDisabled === undefined || isDisabled === false ? false : true}/>
                 </>
             )
         }
