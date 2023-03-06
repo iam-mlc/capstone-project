@@ -1,8 +1,10 @@
+import styles from "./ConfirmedBooking.module.css"
+
 const ConfirmedBooking = () => {
     return ( 
         <main>
-            <section>
-                <p>We look forward to receive you. Your table is reserverd for guests at </p>
+            <section className={styles.confirmed}>
+                <p>Your table has been reserved. We look forward to receiving you ! </p>
             </section>
         </main>
      );
