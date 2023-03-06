@@ -40,6 +40,10 @@ const Button = ({ text, role, url, isDisabled, id }) => {
             disabled={
               isDisabled === undefined || isDisabled === false ? false : true
             }
+            aria-disabled={
+              isDisabled === undefined || isDisabled === false ? false : true
+            }
+            aria-label="Submit form"
             id={id === undefined ? "" : id}
           />
         </>
