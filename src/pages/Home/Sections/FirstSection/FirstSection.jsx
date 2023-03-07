@@ -18,11 +18,13 @@ const FirstSection = () => {
           We are a family owned Mediterranean restaurant, focused on traditional
           recipes served with a modern twist{" "}
         </p>
-        <Button
-          text={"Reserve a Table"}
-          role={"link"}
-          url={url}
-        />
+        <div className={styles.button}>
+          <Button
+            text={"Reserve a Table"}
+            role={"link"}
+            url={url}
+          />
+        </div>
       </div>
       <div className="hero_image">
         <img src={foodImage} alt="restaurant food" />

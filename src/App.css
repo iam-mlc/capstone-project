@@ -3,6 +3,7 @@
   --secondary:  #495E57;
   --background: #EDEFEE;
   --disabled: #bfbdb4;
+  --banner-desc-color: white;
   --primary-font: 'Karla', sans-serif;;
   --secondary-font: 'Markazi Text', serif;
   --main-title-size: 4em;
@@ -10,27 +11,45 @@
   --section-title-size: 3.3331em;
   --card-title-size: 1.5em;
   --card-subtitle-size: 1em;
+  --banner-gap: 3em;
+  --description: 1em
+  /* First section */
 }
+
 
 .mobile-grid{
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2em;
 }
 @media screen and (min-width: 6.25em) and (max-width: 21.875em ){
+  :root{
+    --main-title-size: 2.5em;
+    --subtitle-size: 2em;
+    --section-title-size: 1.6em;
+    --card-title-size: 1em;
+    --card-subtitle-size: 1em;
+    --description: 0.8em;
+    --banner-gap: 3em;
 
+  }
 }
 @media screen and (min-width: 48.0625em) and (max-width: 64em){
+  :root{
+    --banner-gap: 10em;
+  }
   .medium-grid{
     display: grid;
     grid-template-columns: repeat(4,1fr);
-    gap: 2em;
+    margin: auto;
   }
 }
 @media screen and (min-width: 64.0625em){
+  :root{
+    --banner-gap: 15em;
+  }
   .large-grid{
     display: grid;
     grid-template-columns: repeat(12,1fr);
-    gap: 2em;
+    margin: auto;
   }
 }

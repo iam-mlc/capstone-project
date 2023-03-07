@@ -1,10 +1,13 @@
 .header{
-    justify-content: center;
-    align-items: center;
+    display: flex;
+    flex-direction: column;
     padding: 1em;
+    /* border: 3px solid; */
+
 }
 .logo{
-
+    width: fit-content;
+    margin-left: auto;
 }
 @media screen and (min-width: 6.25em) and (max-width: 48em ){
 
@@ -13,6 +16,11 @@
 
 }
 @media screen and (min-width: 64.0625em){
+    .header{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+    }
     .logo{
         grid-column: 3/ span 2;
         align-items: center;

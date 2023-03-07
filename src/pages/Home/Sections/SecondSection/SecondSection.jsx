@@ -37,7 +37,7 @@ const SecondSection = () => {
   };
 
   return (
-    <div className={`${styles.products} ${grids}`} role="region" aria-labelledby="products-heading products-button">
+    <div className={`${styles.products} `} role="region" aria-labelledby="products-heading products-button">
       <div>
         <h2 id="products-heading">This weeks specials!</h2>
         <Button text={"Online Menu"} role={"link"} url={url} id="products-button"/>

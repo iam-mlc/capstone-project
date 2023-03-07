@@ -25,7 +25,7 @@ const ThirdSection = () => {
   };
 
   return (
-    <div className={`${styles.testimonials} ${grids}`}>
+    <div className={`${styles.testimonials} `}>
       <div className={`${styles.title}`}>
         <h2>Testimonial</h2>
       </div>

@@ -1,3 +1,57 @@
+.footer{
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid;
+}
+.logo{
+    width: 8em;
+    margin: auto;
+    padding: 2em;
+    
+}
+.navigation{
+    display: flex;
+    flex-direction: column;
+    gap: var(--heading-gap);
+    border-top: 1px solid;
+    padding: 1em;
+}
+.address{
+    display: flex;
+    flex-direction: column;
+    gap: var(--heading-gap);
+    border-top: 1px solid;
+    padding: 1em;
+}
+.address > address{
+    display: flex;
+    flex-direction: column;
+}
+.social_links{
+    display: flex;
+    flex-direction: column;
+    gap: var(--heading-gap);
+    border-top: 1px solid;
+    padding: 1em;
+    gap: 1em;
+}
+.social_links h2{
+    text-align: center;
+}
+.social_icons ul{
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+.icon{
+    display: block;
+    width: 2em;
+}
+.icon svg{
+    fill: var(--secondary) ;
+}
+
 @media screen and (min-width: 6.25em) and (max-width: 21.875em ){
 
 }
@@ -10,11 +64,13 @@
         --heading-gap: 0.5em;
     }
     .footer{
-        padding: 4em;
+        flex-direction: row;
+        /* padding: 4em; */
+        border-top: none;
     }
     .logo{
         grid-column: 3 / span 2;
-        width: 5em;
+        width: 8em;
         /* margin: auto; */
         margin-top: auto;
         margin-bottom: auto;
@@ -24,12 +80,19 @@
         display: flex;
         flex-direction: column;
         gap: var(--heading-gap);
+        border-top: none;
+        border-right: 1px solid;
+        border-left: 1px solid;
+        padding: 5em;
     }
     .address{
         grid-column: 7/ span 2;
         display: flex;
         flex-direction: column;
         gap: var(--heading-gap);
+        border-right: 1px solid;
+        border-top: none;
+        padding: 5em;
     }
     .address > address{
         display: flex;
@@ -40,6 +103,9 @@
         display: flex;
         flex-direction: column;
         gap: var(--heading-gap);
+        /* border-right: 1px solid; */
+        border-top: none;
+        padding: 5em;
     }
     .social_links h2{
         text-align: center;
@@ -51,7 +117,6 @@
     .icon{
         display: block;
         width: 2em;
-        /* border: 2px solid; */
     }
     .icon svg{
         fill: var(--secondary) ;
