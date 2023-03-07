@@ -1,122 +1,110 @@
-:root{
-    --top-bottom: 10%;
-    --left-right: 10%
+:root {
+  --top-bottom: 10%;
+  --left-right: 10%;
 }
-.about{
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--banner-gap);
+  margin: 2em;
+}
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  padding: 1em;
+}
+.titles > * {
+  font-family: var(--secondary-font);
+  text-align: center;
+}
+.titles h2 {
+  font-size: var(--main-title-size);
+  color: var(--primary);
+}
+.titles h3 {
+  font-size: var(--subtitle-size);
+  color: white;
+}
+.description {
+  color: white;
+  width: 100%;
+  text-align: center;
+}
+.images > div {
+  position: relative;
+  width: var(--fourth-sec-img-cont-wd);
+  height: 27em;
+  padding: 0.5em;
+  overflow: hidden;
+}
+.images > div img:nth-child(1) {
+  right: var(--left-right);
+  top: var(--top-bottom);
+  z-index: 2;
+}
+.images > div img:nth-child(2) {
+  left: var(--left-right);
+  bottom: var(--top-bottom);
+}
+.images > div img {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  object-fit: cover;
+  object-position: -7em;
+  border-radius: 1em;
+}
+
+@media screen and (min-width: 6.25em) and (max-width: 21.875em) {
+  .description {
+    width: 100%;
+  }
+
+  .images > div img {
+    object-position: -10em;
+  }
+  .description {
+    font-size: var(--description);
+  }
+}
+@media screen and (min-width: 48.0625em) and (max-width: 64em) {
+  .description {
+    width: 80%;
+    text-align: left;
+  }
+  .about {
+    gap: 0;
+  }
+  .titles > * {
+    text-align: left;
+  }
+  .images > div {
+    width: 20em;
+  }
+}
+@media screen and (min-width: 64.0625em) {
+  .about {
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
     gap: var(--banner-gap);
-    margin: 2em
-}
-.details{
+  }
+  .details {
     display: flex;
     flex-direction: column;
-    /* width: 24em; */
+    width: 24em;
     gap: 2em;
+  }
+  .images {
+    grid-column: span 5;
     padding: 1em;
-}
-.titles >*{
-    font-family: var(--secondary-font);
-    text-align: center;
-}
-.titles h2{
-    font-size: var(--main-title-size);
-    color: var(--primary);
-}
-.titles h3{
-    font-size: var(--subtitle-size);
-    color: white;
-}
-.description{
-    color: white;
-    width: 100%;
-    text-align: center;
-}
-.images{
-    /* padding: 1em; */
-    
-}
-.images > div{
-    position: relative;
-    width: var(--fourth-sec-img-cont-wd);
-    height: 27em;
-    padding: 0.5em;
-    overflow: hidden;
-}
-.images > div img:nth-child(1){
-    right: var(--left-right);
-    top: var(--top-bottom);
-    z-index: 2;
-    
-}
-.images > div img:nth-child(2){
-    left: var(--left-right);
-    bottom: var(--top-bottom);
-    
-}
-.images > div img{
-    position: absolute;
-    width: 50%;
-    height: 50%;
-    object-fit: cover;
-    object-position: -7em;
-    border-radius: 1em;
-}
-
-@media screen and (min-width: 6.25em) and (max-width: 21.875em ){
-    .description{
-        width: 100%;
-    }
-
-    .images > div img{
-        object-position: -10em;
-    }
-    .description{
-        font-size: var(--description);
-    }
-
-}
-@media screen and (min-width: 48.0625em) and (max-width: 64em){
-    .description{
-        width: 80%;
-        text-align: left;
-    }
-    .about{
-        gap: 0;
-    }
-    .titles >*{
-        text-align: left;
-    }
-    .images > div{
-        width: 20em;
-    }
-
-}
-@media screen and (min-width: 64.0625em){
-
-    .about{
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: var(--banner-gap);
-    }
-    .details{
-        display: flex;
-        flex-direction: column;
-        width: 24em;
-        gap: 2em;
-    }
-    .images{
-        grid-column: span 5 ;
-        padding: 1em;
-    }
-    .titles >*{
-        text-align: left;
-    }
-    .description{
-        text-align: left;
-    }
-
+  }
+  .titles > * {
+    text-align: left;
+  }
+  .description {
+    text-align: left;
+  }
 }

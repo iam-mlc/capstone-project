@@ -1,14 +1,14 @@
-.button{
-    font-weight: 800;
-    display: inline-block;
-    background-color: #F4CE14;
-    padding: 0.5em 1.5em;
-    width: fit-content;
-    border-radius: 1em;
-    border: none;
-    cursor: pointer;
-    font-size: var(--description);
+.button {
+  font-weight: 800;
+  display: inline-block;
+  background-color: #f4ce14;
+  padding: 0.5em 1.5em;
+  width: fit-content;
+  border-radius: 1em;
+  border: none;
+  cursor: pointer;
+  font-size: var(--description);
 }
-.button[disabled]{
-    background-color: var(--disabled);
+.button[disabled] {
+  background-color: var(--disabled);
 }

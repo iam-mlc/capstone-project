@@ -3,19 +3,16 @@ import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import { useEffect, useState } from "react";
 
 const DateInput = ({ label, formik }) => {
-
-  const [isInvalid, setIsInvalid] = useState(false)
+  const [isInvalid, setIsInvalid] = useState(false);
   const inputName = toCamelCase(label);
 
   useEffect(() => {
-
-    if(formik.errors[inputName]){
-      setIsInvalid(true)
+    if (formik.errors[inputName]) {
+      setIsInvalid(true);
+    } else {
+      setIsInvalid(false);
     }
-    else{
-      setIsInvalid(false)
-    }
-  },[formik.errors[inputName]])
+  }, [formik.errors[inputName]]);
 
   return (
     <>

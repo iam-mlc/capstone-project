@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { useNavigate } from 'react-router-dom';
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import BookingForm from "./Sections/SecondSection/BookingForm";
 import grids from "../../utils/cssGridClassNames";
 import styles from "./Booking.module.css";
@@ -12,26 +12,32 @@ const Booking = () => {
   const [data, setData] = useState(null);
   const navigate = useNavigate();
 
-
   const updateTimes = (date) => {
-      const times = date === "" ? fetchAPI(new Date) : fetchAPI(new Date(date))
-      setAvailableTimes(times)
+    const times = date === "" ? fetchAPI(new Date()) : fetchAPI(new Date(date));
+    setAvailableTimes(times);
   };
   const handleData = (data) => {
-    const isValid = submitAPI(data)
-    if(isValid){
-      setData(data)
-      navigate("/confirmed-booking")
+    const isValid = submitAPI(data);
+    if (isValid) {
+      setData(data);
+      navigate("/confirmed-booking");
     }
   };
 
   return (
     <main className={`${grids} ${styles.main}`}>
-      <section role="banner" aria-label="Reserve a table at Little Lemon Restaurant">
+      <section
+        role="banner"
+        aria-label="Reserve a table at Little Lemon Restaurant"
+      >
         <FirstSection />
       </section>
       <section>
-        <BookingForm availableTimes={availableTimes} handleData={handleData} updateTimes={updateTimes} />
+        <BookingForm
+          availableTimes={availableTimes}
+          handleData={handleData}
+          updateTimes={updateTimes}
+        />
       </section>
     </main>
   );

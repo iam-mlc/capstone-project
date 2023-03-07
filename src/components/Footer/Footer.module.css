@@ -1,124 +1,117 @@
-.footer{
-    padding: 1em;
-    display: flex;
-    flex-direction: column;
-    border-top: 1px solid;
+.footer {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid;
 }
-.logo{
+.logo {
+  width: 8em;
+  margin: auto;
+  padding: 2em;
+}
+.navigation {
+  display: flex;
+  flex-direction: column;
+  gap: var(--heading-gap);
+  border-top: 1px solid;
+  padding: 1em;
+}
+.address {
+  display: flex;
+  flex-direction: column;
+  gap: var(--heading-gap);
+  border-top: 1px solid;
+  padding: 1em;
+}
+.address > address {
+  display: flex;
+  flex-direction: column;
+}
+.social_links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--heading-gap);
+  border-top: 1px solid;
+  padding: 1em;
+  gap: 1em;
+}
+.social_links h2 {
+  text-align: center;
+}
+.social_icons ul {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+.icon {
+  display: block;
+  width: 2em;
+}
+.icon svg {
+  fill: var(--secondary);
+}
+
+@media screen and (min-width: 6.25em) and (max-width: 21.875em) {
+}
+@media screen and (min-width: 48.0625em) and (max-width: 64em) {
+}
+@media screen and (min-width: 64.0625em) {
+  :root {
+    --heading-gap: 0.5em;
+  }
+  .footer {
+    flex-direction: row;
+    border-top: none;
+  }
+  .logo {
+    grid-column: 3 / span 2;
     width: 8em;
-    margin: auto;
-    padding: 2em;
-    
-}
-.navigation{
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  .navigation {
+    grid-column: 5 / span 2;
     display: flex;
     flex-direction: column;
     gap: var(--heading-gap);
-    border-top: 1px solid;
-    padding: 1em;
-}
-.address{
+    border-top: none;
+    border-right: 1px solid;
+    border-left: 1px solid;
+    padding: 5em;
+  }
+  .address {
+    grid-column: 7 / span 2;
     display: flex;
     flex-direction: column;
     gap: var(--heading-gap);
-    border-top: 1px solid;
-    padding: 1em;
-}
-.address > address{
+    border-right: 1px solid;
+    border-top: none;
+    padding: 5em;
+  }
+  .address > address {
     display: flex;
     flex-direction: column;
-}
-.social_links{
+  }
+  .social_links {
+    grid-column: 9 / span 2;
     display: flex;
     flex-direction: column;
     gap: var(--heading-gap);
-    border-top: 1px solid;
-    padding: 1em;
-    gap: 1em;
-}
-.social_links h2{
+    border-top: none;
+    padding: 5em;
+  }
+  .social_links h2 {
     text-align: center;
-}
-.social_icons ul{
+  }
+  .social_icons ul {
     display: flex;
-    justify-content: center;
     gap: 1em;
-}
-.icon{
+  }
+  .icon {
     display: block;
     width: 2em;
-}
-.icon svg{
-    fill: var(--secondary) ;
-}
-
-@media screen and (min-width: 6.25em) and (max-width: 21.875em ){
-
-}
-@media screen and (min-width: 48.0625em) and (max-width: 64em){
-
-}
-@media screen and (min-width: 64.0625em){
-
-    :root{
-        --heading-gap: 0.5em;
-    }
-    .footer{
-        flex-direction: row;
-        /* padding: 4em; */
-        border-top: none;
-    }
-    .logo{
-        grid-column: 3 / span 2;
-        width: 8em;
-        /* margin: auto; */
-        margin-top: auto;
-        margin-bottom: auto;
-    }
-    .navigation{
-        grid-column: 5/ span 2;
-        display: flex;
-        flex-direction: column;
-        gap: var(--heading-gap);
-        border-top: none;
-        border-right: 1px solid;
-        border-left: 1px solid;
-        padding: 5em;
-    }
-    .address{
-        grid-column: 7/ span 2;
-        display: flex;
-        flex-direction: column;
-        gap: var(--heading-gap);
-        border-right: 1px solid;
-        border-top: none;
-        padding: 5em;
-    }
-    .address > address{
-        display: flex;
-        flex-direction: column;
-    }
-    .social_links{
-        grid-column: 9/span 2;
-        display: flex;
-        flex-direction: column;
-        gap: var(--heading-gap);
-        /* border-right: 1px solid; */
-        border-top: none;
-        padding: 5em;
-    }
-    .social_links h2{
-        text-align: center;
-    }
-    .social_icons ul{
-        display: flex;
-        gap: 1em;
-    }
-    .icon{
-        display: block;
-        width: 2em;
-    }
-    .icon svg{
-        fill: var(--secondary) ;
-    }
+  }
+  .icon svg {
+    fill: var(--secondary);
+  }
 }

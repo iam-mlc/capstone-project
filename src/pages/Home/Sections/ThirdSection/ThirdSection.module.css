@@ -1,9 +1,8 @@
 .testimonials {
   display: flex;
   flex-direction: column;
-  
 }
-.title h2{
+.title h2 {
   font-family: var(--secondary-font);
   font-weight: 800;
   font-size: var(--section-title-size);
@@ -34,12 +33,11 @@
   display: flex;
 }
 @media screen and (min-width: 6.25em) and (max-width: 21.875em) {
-  .review{
+  .review {
     font-size: var(--description);
   }
 }
 @media screen and (min-width: 48.0625em) and (max-width: 64em) {
-
   .list_item {
     flex: 1 45%;
   }
@@ -47,14 +45,8 @@
 @media screen and (min-width: 64.0625em) {
   .testimonials {
     padding: 0em 8em;
-    
   }
   .list_item {
-    flex: 1 ;
+    flex: 1;
   }
-
-  /* .list {
-    flex-direction: row;
-    gap: 1em;
-  } */
 }

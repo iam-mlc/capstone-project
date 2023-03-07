@@ -5,16 +5,14 @@ import { useEffect, useState } from "react";
 import TextInput from "../../../../components/Forms/TextInput/TextInput";
 import DateInput from "../../../../components/Forms/DateInput/DateInput";
 import SelectInput from "../../../../components/Forms/SelectInput/SelectInput";
-import bookingHours from "../../../../utils/bookingForm/bookingHours";
 import bookingOccasion from "../../../../utils/bookingForm/bookingOccasion";
 import NumberInput from "../../../../components/Forms/NumberInput/NumberInput";
 import validationData from "../../../../utils/bookingForm/validationData";
 import initialValues from "../../../../utils/bookingForm/formik/initialValues";
 import bookingSchema from "../../../../utils/bookingForm/formik/validationSchema";
 
-const BookingForm = ({availableTimes, handleData, updateTimes}) => {
-
-  const [isInvalid, setIsInvalid] = useState(null)
+const BookingForm = ({ availableTimes, handleData, updateTimes }) => {
+  const [isInvalid, setIsInvalid] = useState(null);
 
   const [
     firstName,
@@ -29,25 +27,23 @@ const BookingForm = ({availableTimes, handleData, updateTimes}) => {
     initialValues: initialValues,
     validationSchema: bookingSchema,
     onSubmit: (values, { setSubmitting, resetForm }) => {
-      handleData(values)
+      handleData(values);
       setSubmitting(false);
       resetForm();
     },
   });
 
   useEffect(() => {
-    updateTimes(formik.values.chooseDate)
-  }, [formik.values.chooseDate])
+    updateTimes(formik.values.chooseDate);
+  }, [formik.values.chooseDate]);
 
   useEffect(() => {
-
-    if(Object.keys(formik.errors).length){
-      setIsInvalid(true)
+    if (Object.keys(formik.errors).length) {
+      setIsInvalid(true);
+    } else {
+      setIsInvalid(false);
     }
-    else{
-      setIsInvalid(false)
-    }
-  }, [formik.errors])
+  }, [formik.errors]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -56,7 +52,7 @@ const BookingForm = ({availableTimes, handleData, updateTimes}) => {
 
   return (
     <>
-      <form onSubmit={handleSubmit} className={`${styles.form}`} >
+      <form onSubmit={handleSubmit} className={`${styles.form}`}>
         <div className={`${styles.single_col}`}>
           <TextInput text={firstName.label} formik={formik} />
         </div>
@@ -67,7 +63,11 @@ const BookingForm = ({availableTimes, handleData, updateTimes}) => {
           <DateInput label={chooseDate.label} formik={formik} />
         </div>
         <div className={`${styles.single_col}`}>
-          <SelectInput label={chooseTime.label} formik={formik} data={availableTimes} />
+          <SelectInput
+            label={chooseTime.label}
+            formik={formik}
+            data={availableTimes}
+          />
         </div>
         <div className={`${styles.single_col}`}>
           <NumberInput label={numberOfGuests.label} formik={formik} />
@@ -80,7 +80,11 @@ const BookingForm = ({availableTimes, handleData, updateTimes}) => {
           />
         </div>
         <div className={`${styles.single_col} ${styles.button}`}>
-          <Button text={"Make Your reservation"} role="submit" isDisabled={isInvalid}/>
+          <Button
+            text={"Make Your reservation"}
+            role="submit"
+            isDisabled={isInvalid}
+          />
         </div>
       </form>
     </>

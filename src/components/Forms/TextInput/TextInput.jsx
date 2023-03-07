@@ -3,19 +3,17 @@ import toCamelCase from "../../../utils/toCamelCase";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 
 const TextInput = ({ text, formik }) => {
-  const [isInvalid, setIsInvalid] = useState(false)
+  const [isInvalid, setIsInvalid] = useState(false);
   const inputName = toCamelCase(text);
 
   useEffect(() => {
+    if (formik.errors[inputName]) {
+      setIsInvalid(true);
+    } else {
+      setIsInvalid(false);
+    }
+  }, [formik.errors[inputName]]);
 
-    if(formik.errors[inputName]){
-      setIsInvalid(true)
-    }
-    else{
-      setIsInvalid(false)
-    }
-  },[formik.errors[inputName]])
-  
   return (
     <>
       <label htmlFor={inputName}>{text}</label>

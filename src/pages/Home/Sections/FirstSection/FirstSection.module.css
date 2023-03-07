@@ -107,7 +107,6 @@
     }
     .hero div:nth-child(2) img{
         height: var(--first-sec-ban-hg);
-        /* width: 10em; */
     }
     .button{
         margin: 0;
