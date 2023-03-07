@@ -19,6 +19,7 @@
 }
 .titles >*{
     font-family: var(--secondary-font);
+    text-align: center;
 }
 .titles h2{
     font-size: var(--main-title-size);
@@ -31,6 +32,7 @@
 .description{
     color: white;
     width: 100%;
+    text-align: center;
 }
 .images{
     /* padding: 1em; */
@@ -67,9 +69,7 @@
     .description{
         width: 100%;
     }
-    .images > div{
-        width: var(--fourth-sec-img-cont-wd);
-    }
+
     .images > div img{
         object-position: -10em;
     }
@@ -81,11 +81,18 @@
 @media screen and (min-width: 48.0625em) and (max-width: 64em){
     .description{
         width: 80%;
+        text-align: left;
     }
     .about{
         gap: 0;
-     
     }
+    .titles >*{
+        text-align: left;
+    }
+    .images > div{
+        width: 20em;
+    }
+
 }
 @media screen and (min-width: 64.0625em){
 
@@ -105,4 +112,11 @@
         grid-column: span 5 ;
         padding: 1em;
     }
+    .titles >*{
+        text-align: left;
+    }
+    .description{
+        text-align: left;
+    }
+
 }

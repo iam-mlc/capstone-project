@@ -8,7 +8,7 @@
   --secondary-font: 'Markazi Text', serif;
   --main-title-size: 4em;
   --subtitle-size: 2.5em;
-  --section-title-size: 3.3331em;
+  --section-title-size: 2.7em;
   --card-title-size: 1.5em;
   --card-subtitle-size: 1em;
   --banner-gap: 3em;
@@ -36,6 +36,7 @@
 @media screen and (min-width: 48.0625em) and (max-width: 64em){
   :root{
     --banner-gap: 10em;
+    --section-title-size: 3.3331em;
   }
   .medium-grid{
     display: grid;
@@ -46,6 +47,7 @@
 @media screen and (min-width: 64.0625em){
   :root{
     --banner-gap: 15em;
+    --section-title-size: 3.3331em;
   }
   .large-grid{
     display: grid;

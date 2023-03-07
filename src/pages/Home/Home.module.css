@@ -51,13 +51,14 @@
 
 @media screen and (min-width: 6.25em) and (max-width: 21.875em ){
     :root{
-        --first-sec-desc-wd: 13em;
-        --fourth-sec-img-cont-wd: 15em;
+        --first-sec-desc-wd: 12em;
+        --fourth-sec-img-cont-wd: 12em;
     }
 }
 @media screen and (min-width: 48.0625em) and (max-width: 64em){
   :root{
     --fist-sec-img-cont-hg: 24.3125em;
+    --fourth-sec-img-cont-wd: 20em;
   }
     .main > section{
         grid-column: span 4;

@@ -6,7 +6,7 @@
 .title h2{
   font-family: var(--secondary-font);
   font-weight: 800;
-  font-size: var(--main-title-size);
+  font-size: var(--section-title-size);
   text-align: center;
 }
 .list {

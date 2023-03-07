@@ -26,7 +26,7 @@ const FirstSection = () => {
           />
         </div>
       </div>
-      <div className="hero_image">
+      <div className="">
         <img src={foodImage} alt="restaurant food" />
       </div>
     </div>
