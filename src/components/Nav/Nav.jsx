@@ -11,7 +11,7 @@ const NavLinks = ({url, name}) =>{
     )
 }
 
-const Nav = () => {
+const Nav = ({id, isExpanded}) => {
     const style = {
         parent: `${styles.menu}`,
         child: `${styles.item}`
@@ -19,7 +19,7 @@ const Nav = () => {
 
     return (
         <>
-            <nav className={`${styles.nav}`} role="navigation">
+            <nav className={`${styles.nav}`} role="navigation" id={id} aria-expanded={isExpanded}>
                 <UnorderedList
                 data ={links}
                 Component = {NavLinks}
