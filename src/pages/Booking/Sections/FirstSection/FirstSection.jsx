@@ -9,11 +9,9 @@ const FirstSection = () => {
                 <h1>Book a table</h1>
                 <h2>Reservations are open</h2>
               </div>
-              <div className={styles.description}>
-                <p>
+                <p className={styles.description}>
                     Please fill the form bellow so you can guarantee a table for your friends and family. We really want you to enjoy the delicious meals we prepared today !
                 </p>
-              </div>
             </div>
             <div className={styles.image}>
               <img src={restaurantImage} alt="" />

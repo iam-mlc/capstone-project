@@ -1,45 +1,58 @@
-.form{
-    display: flex;
-    flex-direction: column;
-    gap: 1.5em;
-    align-items: center;
-    padding: 5em;
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  /* align-items: center; */
+  padding: 1em 1em;
 }
-.single_col{
-    display: flex;
-    flex-direction: column;
+.single_col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.single_col:not(:last-child){
-    height: 5em;
+.single_col:not(:last-child) {
+  height: 5em;
 }
-.form input:not([type = "submit"]),
-.form select{
-    width: 20em;
-    height: 2em;
-    text-align: center;
+.form input:not([type="submit"]),
+.form select {
+  width: 85%;
+  height: 2em;
+  text-align: center;
 }
-.form input:focus:not([type = "submit"]), 
-.form select:focus{
-    outline: 2px solid var(--primary);
-    border: none;
+.form input:focus:not([type="submit"]),
+.form select:focus {
+  outline: 2px solid var(--primary);
+  border: none;
 }
 
-.form input[type = "date"]{
-    text-align: center;
+.form input[type="date"] {
+  text-align: center;
 }
-.form select[name ="chooseTime"]{
-    text-align: center;
-    height: 2em;
+.form select[name="chooseTime"] {
+  text-align: center;
+  height: 2em;
 }
-.form select[name ="occasion"]{
-    text-align: center;
-    height: 2em;
+.form select[name="occasion"] {
+  text-align: center;
+  height: 2em;
 }
-.button{
-    margin: auto;
-    margin-top: 1em;
+.button {
+  margin: auto;
+  margin-top: 1em;
 }
-.error{
-    font-size: 0.80em;
-    color: red;
+.error {
+  font-size: 0.8em;
+  color: red;
+}
+@media screen and (min-width: 48.0625em) and (max-width: 64em) {
+    .form input:not([type="submit"]),
+    .form select {
+      width: 40%;
+    }
+}
+@media screen and (min-width: 64.0625em) {
+  .form input:not([type="submit"]),
+  .form select {
+    width: 30%;
+  }
 }
