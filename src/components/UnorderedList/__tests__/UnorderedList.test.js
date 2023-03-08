@@ -14,25 +14,19 @@ const Products  = ({name, price, url}) => {
 
 const data = [
     {
-        id: function(){
-            return this.name
-        },
+        id: "Desert",
         name: "Desert",
         price: "12.99",
         url: "/"
     },
     {
-        id: function(){
-            return this.name
-        },
+        id: "Toys",
         name: "Toys",
         price: "10.99",
         url: "/"
     },
     {
-        id: function(){
-            return this.name
-        },
+        id: "Food",
         name: "Food",
         price: "5.99",
         url: "/"

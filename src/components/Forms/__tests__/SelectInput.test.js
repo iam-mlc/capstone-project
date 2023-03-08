@@ -17,11 +17,11 @@ describe("SelectInput", () => {
   test("renders the select input with label and options", () => {
     const data = ["Option 1", "Option 2", "Option 3"];
     const label = "Select an option";
+    
+    render(<SelectInput label={label} data={data} formik={formik} />);
     const labelElement = screen.getByLabelText(label);
     const selectElement = screen.getByRole("combobox");
     const optionElements = screen.getAllByRole("option");
-
-    render(<SelectInput label={label} data={data} formik={formik} />);
     expect(labelElement).toBeInTheDocument();
     expect(selectElement).toHaveLength(data.length);
     expect(optionElements).toHaveLength(data.length);
