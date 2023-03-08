@@ -5,7 +5,7 @@ const ErrorMessage = ({ name, formik }) => {
   return (
     <div>
       {errors ? (
-        <div className={`${styles.error}`}>{formik.errors[`${name}`]}</div>
+        <div className={`${styles.error}`} role="alert">{formik.errors[`${name}`]}</div>
       ) : null}
     </div>
   );
