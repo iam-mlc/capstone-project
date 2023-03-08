@@ -1,3 +1,3 @@
 # Capstone project
 
-This is a project I am using to test my git skills.
+This is a capstone project of the Meta-Professional-Front-End-Developer course.
