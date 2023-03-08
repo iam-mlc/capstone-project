@@ -19,7 +19,7 @@ const Nav = ({ id, isExpanded }) => {
 
   return (
     <>
-      <nav className={`${styles.nav}`} role="navigation" id={id}>
+      <nav className={`${styles.nav}`} role="navigation" id={id} aria-expanded={`${isExpanded}`}>
         <UnorderedList
           data={links}
           Component={NavLinks}
